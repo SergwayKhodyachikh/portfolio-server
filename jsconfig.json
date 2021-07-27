@@ -1,0 +1,9 @@
+{
+  // @link https://code.visualstudio.com/docs/nodejs/working-with-javascript
+  "compilerOptions": {
+    "module": "commonjs"
+    // "baseUrl": "."
+  },
+  "include": ["."],
+  "exclude": ["node_modules", "**/node_modules/*"]
+}

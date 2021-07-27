@@ -1,0 +1,74 @@
+{
+  "name": "portfolio-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "14.17.0",
+    "npm": "6.14.13"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "npx nodemon index.js",
+    "test": "NODE_ENV=test jest -i --detectOpenHandles",
+    "pretest": "NODE_ENV=test npx sequelize-cli db:create; NODE_ENV=test npx sequelize-cli db:migrate",
+    "posttest": "NODE_ENV=test npx sequelize-cli db:drop",
+    "db:create": "npx sequelize-cli db:create",
+    "db:migrate": "npx sequelize-cli db:migrate",
+    "db:seed": "npx sequelize-cli db:seed:all",
+    "db:seed:undo": "npx sequelize-cli db:seed:all:undo",
+    "db:init": "npm run db:create;npm run db:migrate;npm run db:seed",
+    "share": "npx ngrok http 5000",
+    "lint": "eslint --ignore-path .gitignore ."
+  },
+  "keywords": [],
+  "author": "Sergey Khodyachikh",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "chalk": "^4.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "faker": "^5.1.0",
+    "handlebars": "^4.7.6",
+    "helmet": "^4.1.1",
+    "jest-environment-node": "^27.0.6",
+    "joi": "^17.4.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.4.13",
+    "pg": "^8.4.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "eslint": "^7.31.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^27.0.6",
+    "jsdoc": "^3.6.6",
+    "jsdom": "^16.6.0",
+    "nodemon": "^2.0.2",
+    "prettier": "2.3.2",
+    "supertest": "^5.0.0"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "public",
+      "public/*"
+    ],
+    "delay": "1000"
+  }
+}
